@@ -1,3 +1,8 @@
+@viewport{
+  zoom: 1.0;
+  width: extend-to-zoom;
+}
+
 body{
   font-family: Roboto;
 }
