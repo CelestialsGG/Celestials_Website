@@ -108,10 +108,9 @@
   height: 100%;
 }
 #navtest {
-  background-image: url("../images/rectangle_1.png");
+  background-image: url("images/Rectangle_1.png");
 }
 
 #mainpagebackground {
-  background-image: url("../images/wowbackground.png");
-
+  background-image: url("images/wowbackground.png");
 }
