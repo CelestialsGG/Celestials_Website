@@ -1,6 +1,6 @@
 let clinetId = "1jld8u8wgq6gptu0aqtn4pwi3icyo4";
 let clinetSecret = "xt2ee0rwaj9vuyvbpf6qjiwz8apo2o";
-let channelList=['bigrodentt', 'tragiicisbad', 'loltyler1', 'lirik', 'shroud', 'landonkyle']
+let channelList=['bigrodentt', 'tragiicisbad', 'loltyler1', 'tarik', 'shroud', 'landonkyle']
 
 function getTwitchAuthorization() {
     let url = `https://id.twitch.tv/oauth2/token?client_id=${clinetId}&client_secret=${clinetSecret}&grant_type=client_credentials`;
@@ -56,9 +56,13 @@ function renderStreams(data) {
     let streamsContainer = document.getElementById("joemama");
     let offlineContainer = document.getElementById("offlineContainer");
     streamsContainer.innerHTML = "";
-    console.log(channelList)
+    let temprow = document.createElement('div')
+    temprow.classList='row'
 
+    console.log(channelList)
+    let ttee = 0
     streams.forEach((stream) => {
+        ttee +=1
         console.log('test')
         let { thumbnail_url: thumbnail, title, viewer_count, user_name} = stream;
         let hdThumbnail = thumbnail
@@ -66,58 +70,52 @@ function renderStreams(data) {
             .replace("{height}", "720");
 
         streamsContainer.innerHTML += `
-        <div class="row mt-3">
-        <a href="https://twitch.tv/${user_name}" target="_blank">
+
             <div class="col-md-4 col-sm-12 mt-2 border">
                 <div class="row">
-                <img class="p-0"src="${hdThumbnail}" alt="" />
+                <img class=" img-fluid"src="${hdThumbnail}" alt="" />
                 </div>
                 <div class="row">
-                <div class="col">${title}</div>
+                <div class="col"><h5 style="font-weight: bold">${title}</h5></div>
                 </div>
                 <div class="row">
                     <div class="col-auto">
-                    <h3 class="text-left">${user_name}</h3>
+                    <h5 class="text-left">${user_name}</h5>
                     </div>
-                    <div class="col"><h3>${viewer_count
+                    <div class="col"><h5>${viewer_count
                         .toString()
-                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h3></div>
+                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")} Viewers</h5></div>
                 
             </div>
-            </div>
-        </a>
+            
+
         `;
         if (channelList.includes(stream.user_name)) {
             channelList.splice(channelList.indexOf(stream.user_name), 1);
-    }
-    console.log(channelList)
-    offlineContainer.innerHTML = "";
-    let temp = 0
-    for (let i = 0; i < channelList.length; i++) {
-        let row = document.createElement('div')
-        row.className = "row mt-3"
-        temp += 1
-        oneElement = document.createElement('div')
-        oneElement.className = "col-md-4 col-sm-12 mt-2"
-        if (temp != 4) {
-            oneElement.innerHTML += `
-            <div class="row">
-                <div class="col-auto">
-                <h5 class="text-left">${channelList[i]}</h5>
-                </div>
-            </div>
-        `;
         }
-        else {
-            row.appendChild(oneElement)
-        }
-        console.log(row)
-        offlineContainer.appendChild(row)
-    }
-    
-
     });
     
+    
+    let temp = 0
+    let tempBool = true
+    let row = document.createElement('div')
+    row.className='row mt-3'
+    for (let i=0; i<channelList.length; i++) {
+        let oneElement = document.createElement('div')
+        oneElement.className = "col-md-4 col-sm-12 mt-2"
+
+        temp+=1
+        offlineContainer.innerHTML += `
+        <div class="col-auto">
+        <a style="text-decoration: none!important;"href=https://twitch.tv/${channelList[i]}>
+        <h5 class="text-center text-light">${channelList[i]}</h5></a>
+        </div> 
+        `
+    }
+
+    
+    
+
 }
 
 getStreams(channelList);
