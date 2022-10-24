@@ -1,4 +1,4 @@
-let playercardContainer = document.getElementById('grad2')
+let playercardContainer = document.getElementById('joe')
 playercardContainer.innerHTML = ''
 let temp = []
 const players = [
@@ -13,25 +13,81 @@ const players = [
     },
     {
         name: 'Craweldaddy', socials: {twitch: "", twitter: '', youtube: ""} 
+    },
+    {
+        name: 'Dermadexx', socials: {twitch: "", twitter: '', youtube: ""} 
+    },
+    {
+        name: 'Drew', socials: {twitch: "", twitter: '', youtube: ""} 
+    },
+    {
+        name: 'Eblic', socials: {twitch: "", twitter: '', youtube: ""} 
+    },
+    {
+        name: 'Grim', socials: {twitch: "", twitter: '', youtube: ""} 
+    },
+    {
+        name: 'Heather', socials: {twitch: "", twitter: '', youtube: ""} 
+    },
+    {
+        name: 'Izzo', socials: {twitch: "", twitter: '', youtube: ""} 
+    },
+    {
+        name: 'Kyle', socials: {twitch: "", twitter: '', youtube: ""} 
+    },
+    {
+        name: 'Morni', socials: {twitch: "", twitter: '', youtube: ""} 
+    },
+    {
+        name: 'Navarone', socials: {twitch: "", twitter: '', youtube: ""} 
+    },
+    {
+        name: 'Raidken', socials: {twitch: "", twitter: '', youtube: ""} 
+    },
+    {
+        name: 'Raldin', socials: {twitch: "", twitter: '', youtube: ""} 
+    },
+    {
+        name: 'Rarely', socials: {twitch: "", twitter: '', youtube: ""} 
+    },
+    {
+        name: 'Rhonabu', socials: {twitch: "", twitter: '', youtube: ""} 
+    },
+    {
+       name: 'Teddy', socials: {twitch: "", twitter: '', youtube: ""} 
+    },
+    {
+        name: 'Torqaan', socials: {twitch: "", twitter: '', youtube: ""} 
     }
+
+    
 ]
 
 function renderPlayers() {
     for (let i = 0; i < players.length; i++) {
-        temp+=`<div
+        if (i % 4 == 0 && i !=0) {
+          console.log('joe')
+
+          let temprow = createElement('row mt-4 justify-content-around', temp)
+          temp = []
+
+          playercardContainer.appendChild(temprow)
+          
+      }
+        temp.push(`<div
         id="playercard"
-        class="col-sm-8 col-md-3 bg-primary rounded-xl mt-5"
+        class="col-md-5 col-sm-8 col-lg-2 bg-primary rounded-xl mt-5"
       >
         <div class="row">
           <img
             class="img-fluid p-0 rounded-xlphoto"
-            src="../images/8x10headshotexample.png"
+            src="../NEWHEADSHOTS/${players[i].name}.png"
             alt=""
           />
         </div>
         <div class="">
           <div class="col">
-            <h3 class="text-center text-light">Kyle Landon</h3>
+            <h3 class="text-center text-light">${players[i].name}</h3>
           </div>
         </div>
         <div class="row">
@@ -40,22 +96,34 @@ function renderPlayers() {
           </div>
         </div>
         <div class="row justify-content-around mb-2">
-          <div class="col-3 d-flex justify-content-center">
+          <a href="https://twitch.tv/${players[i].twitch}"class="col-3 d-flex justify-content-center">
             <img src="../svgs/twitch.svg" alt="" />
-          </div>
-          <div class="col-3 d-flex justify-content-center">
+          </a>
+          <a href="https://twitter.com/${players[i].twitter}"class="col-3 d-flex justify-content-center">
             <img src="../svgs/twitter.svg" alt="" />
-          </div>
-          <div class="col-3 d-flex justify-content-center">
+          </a>
+          <a href="https://tiktok.com/${players[i]}"class="col-3 d-flex justify-content-center">
             <img src="../svgs/tiktok.svg" alt="" />
-          </div>
-          <div class="col-3 d-flex justify-content-center">
+          </a>
+          <a href="https://youtube.com/${players[i].youtube}"class="col-3 d-flex justify-content-center">
             <img src="../svgs/youtube.svg" alt="" />
-          </div>
+          </a>
         </div>
-      </div>`
+      </div>`)
     
     }
+    let temprow2 = createElement('row mt-4 justify-content-around',temp)
+    playercardContainer.appendChild(temprow2)
+
+}
+
+function createElement(classes, content) {
+  let final = document.createElement('div')
+  final.className = classes
+  for (let i = 0; i < content.length; i++) {
+      final.innerHTML+= content[i]
+  }
+  return final
 
 }
 
