@@ -1,5 +1,5 @@
-let clinetId = "1jld8u8wgq6gptu0aqtn4pwi3icyo4";
-let clinetSecret = "xt2ee0rwaj9vuyvbpf6qjiwz8apo2o";
+let clinetId = "CLIENT_ID";
+let clinetSecret = "CLIENT_SECRET";
 let channelList=['m0xyy','bigrodentt', 'tragiicisbad', 'loltyler1', 'tarik', 'shroud', 'emongg', 'landonkyle', 'summit1g']
 
 function getTwitchAuthorization() {
@@ -89,7 +89,7 @@ function renderStreams(data) {
                 <div class="row">
                 
                     <div class="col">
-                    <h5 class="text-left">${user_name}</h5>
+                    <h5 class="text-left text-light">${user_name}</h5>
                     </div>
                     <div class="col-4"><h5 class="text-center text-light">${viewer_count
                         .toString()
