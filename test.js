@@ -1,6 +1,6 @@
 let clinetId = "1jld8u8wgq6gptu0aqtn4pwi3icyo4";
 let clinetSecret = "xt2ee0rwaj9vuyvbpf6qjiwz8apo2o";
-let channelList=['bigrodentt', 'tragiicisbad', 'loltyler1', 'tarik', 'shroud', 'landonkyle']
+let channelList=['bigrodentt', 'tragiicisbad', 'loltyler1', 'tarik', 'shroud', 'emongg', 'landonkyle', 'summit1g']
 
 function getTwitchAuthorization() {
     let url = `https://id.twitch.tv/oauth2/token?client_id=${clinetId}&client_secret=${clinetSecret}&grant_type=client_credentials`;
@@ -57,7 +57,7 @@ function renderStreams(data) {
     let offlineContainer = document.getElementById("offlineContainer");
     streamsContainer.innerHTML = "";
     let temprow = document.createElement('div')
-    temprow.classList='row'
+    temprow.classList='row justify-content-between'
 
     console.log(channelList)
     let ttee = 0
@@ -69,7 +69,7 @@ function renderStreams(data) {
             .replace("{width}", "1280")
             .replace("{height}", "720");
 
-        streamsContainer.innerHTML += `
+        temprow.innerHTML += `
 
             <div class="col-md-4 col-sm-12 mt-2 border">
                 <div class="row">
@@ -90,10 +90,16 @@ function renderStreams(data) {
             
 
         `;
+        console.log(temprow)
+        if (ttee === 3) {
+            streamsContainer.appendChild(temprow)
+
+        }
         if (channelList.includes(stream.user_name)) {
             channelList.splice(channelList.indexOf(stream.user_name), 1);
         }
     });
+    streamsContainer.appendChild(temprow)
     
     
     let temp = 0
