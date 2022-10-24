@@ -123,6 +123,7 @@ body{
   background-image: url("images/wowbackground.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  object-position: 100% 0;
 
 }
 
@@ -135,4 +136,8 @@ body{
 
 .text-shadow{
   text-shadow: 2px 2px 2px #000;
+}
+
+.twitchgrad {
+  background-image: linear-gradient(rgb(48, 48, 48), rgb(125, 29, 113));
 }
