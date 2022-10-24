@@ -2,10 +2,14 @@ class twitchAPI {
     constructor(clientId, clientSecret, channelList) {
         this.clientId = clientId;
         this.clientSecret = clientSecret;
+
         this.channelList = channelList;
     }
-    getTwitchAuthorization() {
-        let url = `https://id.twitch.tv/oauth2/token?client_id=${clinetId}&client_secret=${clinetSecret}&grant_type=client_credentials`;
+
+    async getTwitchAuthorization() {
+        let id = this.clientId;
+        let secret = this.clientSecret;
+        let url = `https://id.twitch.tv/oauth2/token?client_id=${id}&client_secret=${secret}&grant_type=client_credentials`;
     
         return fetch(url, {
         method: "POST",
@@ -28,7 +32,7 @@ class twitchAPI {
             }
             
         }
-        console.log(finalstreamerList)
+
     
         const endpoint = `https://api.twitch.tv/helix/streams?${finalstreamerList}`;
        // const endpoint = 'https://api.twitch.tv/helix/streams?user_login=loltyler1&user_login=tragiicisbad&user_login=xqc' ;
@@ -37,7 +41,8 @@ class twitchAPI {
         let { access_token, expires_in, token_type } = authorizationObject;
     
         //token_type first letter must be uppercase    
-        token_type =
+
+        token_type = 
         token_type.substring(0, 1).toUpperCase() +
         token_type.substring(1, token_type.length);
     
@@ -45,54 +50,29 @@ class twitchAPI {
     
         let headers = {
         authorization,
-        "Client-Id": clinetId,
+        "Client-Id": this.clientId,
         };
     
         fetch(endpoint, {
-        headers,
-        })
-        .then((res) => res.json())
-        .then((data) => this.renderStreams(data));
-    }
-    
-    renderStreams(data) {
-        console.log(JSON.stringify(data));
-    }
-}
-
-
-
-
-class CreateStreamerElements {
-    constructor(container, streamerList) {
-        this.container = document.getElementById("container");
-        this.streamerList = streamerList
-    }
-    
-    createStreamerList(streamer) {
-        let streamerElement = document.createElement("li");
-        streamerElement.classList.add("streamer");
-        streamerElement.innerHTML = streamer;
-        this.streamerList.appendChild(streamerElement);
-    }
-    
-    removeStreamer(e) {
-        if (e.target.classList.contains("streamer")) {
-            e.target.remove();
+            headers,
+            })
+            .then((res) => res.json())
+            .then((data) => this.renderStreams(data));
         }
-    }
+        
+
+        renderStreams(data) {
+            return JSON.stringify(data)}
+        
     
-    createStreamCard(streamer) {
-        let streamCard = document.createElement("div");
-        streamCard.classList.add("streamCard");
-        streamCard.innerHTML = streamer;
-        this.container.appendChild(streamCard);
+
     }
-}
+    getAPIButton = document.getElementById("getAPIButton");
+    let callAPI = new twitchAPI(clientId='1jld8u8wgq6gptu0aqtn4pwi3icyo4', clientSecret='xt2ee0rwaj9vuyvbpf6qjiwz8apo2o', channelList=['bigrodentt', 'tragiicisbad', 'loltyler1', 'lirik', 'shroud'])
+    
+    getAPIButton.addEventListener("click", getAPI)
 
-
-let callAPI = new twitchAPI('jld8u8wgq6gptu0aqtn4pwi3icyo4', 'yoh9ddqqr0p82hk0zfup4688esbyrn', ['bigrodentt', 'tragiicisbad', 'loltyler1', 'lirik'])
-
-
-
-callAPI.getStreams()
+    function getAPI() {
+        let rawdata= callAPI.getStreams()
+        console.log(rawdata)
+    }
