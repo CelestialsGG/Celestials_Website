@@ -70,7 +70,7 @@ function renderStreams(data) {
 
 
         if (counter % 3 == 0 && counter !=0) {
-            temprowoffiline = createElement('row mt-4 justify-content-around', temprow)
+            let temprowoffiline = createElement('row mt-4 justify-content-around', temprow)
             temprow = []
             streamsContainer.appendChild(temprowoffiline)
             
@@ -99,6 +99,9 @@ function renderStreams(data) {
                
             </a>
         `)
+        if (channelList.includes((stream.user_name).toLowerCase())) {
+            channelList.splice(channelList.indexOf((stream.user_name).toLowerCase()), 1);
+        }
 
     });
     if (temprow.length ===1) {
