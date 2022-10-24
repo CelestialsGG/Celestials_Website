@@ -122,6 +122,8 @@ body{
 #mainpagebackground {
   background-image: url("images/wowbackground.png");
   background-repeat: no-repeat;
+  background-size: 100% 100%;
+
 }
 
 .text-responsive {
