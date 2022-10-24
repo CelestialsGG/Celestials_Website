@@ -1,0 +1,1 @@
+https://us.api.blizzard.com/profile/wow/character/illidan/eblicdru%20/character-media?namespace=profile-us&locale=en_US&access_token=USb7vjmha3uijo2wSiAgpVxNIktct7QM7G
