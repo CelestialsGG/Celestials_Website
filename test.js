@@ -1,5 +1,5 @@
-let clinetId = "CLIENT_ID";
-let clinetSecret = "CLIENT_SECRET";
+let clinetId = "1jld8u8wgq6gptu0aqtn4pwi3icyo4";
+let clinetSecret = "xt2ee0rwaj9vuyvbpf6qjiwz8apo2o";
 let channelList=['m0xyy','bigrodentt', 'tragiicisbad', 'loltyler1', 'tarik', 'shroud', 'emongg', 'landonkyle', 'summit1g']
 
 function getTwitchAuthorization() {
