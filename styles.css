@@ -3,11 +3,18 @@
   width: extend-to-zoom;
 }
 
-body{
-  font-family: Roboto;
-}
+
 
 #playercard {
+  border-width: 1px;
+  border-color: rgb(0, 0, 0);
+  border-style: solid;
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(253, 253, 253);
+  background-color: #282828;
+}
+#playercard1 {
   border-width: 1px;
   border-color: rgb(0, 0, 0);
   border-style: solid;
@@ -30,7 +37,6 @@ body{
     rgb(248, 162, 57) 100%
   );
 }
-
 .rounded-xl {
   -moz-border-radius: 1.5rem 1.5rem 1.5rem 1.5rem;
   -webkit-border-radius: 1.5rem 1.5rem 1.5rem 1.5rem;

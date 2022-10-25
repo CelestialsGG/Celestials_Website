@@ -76,7 +76,7 @@ function renderPlayers() {
       }
         temp.push(`<div
         id="playercard"
-        class="col-md-5 col-sm-8 col-lg-2 bg-primary rounded-xl mt-5 drop-shadow1"
+        class="col-md-5 col-sm-8 col-lg-2 rounded-xl mt-5 drop-shadow1"
       >
         <div class="row">
           <img
@@ -87,7 +87,7 @@ function renderPlayers() {
         </div>
         <div class="">
           <div class="col">
-            <h3 class="text-center text-light">${players[i].name}</h3>
+            <h4 class="text-center text-light">${(players[i].name).toUpperCase()}</h4>
           </div>
         </div>
         <div class="row">
