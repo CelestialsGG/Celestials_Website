@@ -78,7 +78,7 @@ function renderStreams(data) {
         counter +=1
 
         temprow.push(`
-            <a  style="text-decoration: none!important;"href="https://twitch.tv/${user_name}" class="col-md-3 col-sm-12 mt-2 border p-0 twitchgrad">
+            <a  style="text-decoration: none!important;"href="https://twitch.tv/${user_name}" class=" col-md-3 col-sm-12 mt-2 border p-0 twitchgrad">
                 <div class="row">
                 <img class=" img-fluid"src="${hdThumbnail}" alt="" />
                 </div>

@@ -76,11 +76,11 @@ function renderPlayers() {
       }
         temp.push(`<div
         id="playercard"
-        class="col-md-5 col-sm-8 col-lg-2 bg-primary rounded-xl mt-5"
+        class="col-md-5 col-sm-8 col-lg-2 bg-primary rounded-xl mt-5 drop-shadow1"
       >
         <div class="row">
           <img
-            class="img-fluid p-0 rounded-xlphoto"
+            class="img-fluid p-0 rounded-xlphoto photo-b-border"
             src="../NEWHEADSHOTS/${players[i].name}.png"
             alt=""
           />

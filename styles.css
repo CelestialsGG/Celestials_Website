@@ -141,3 +141,10 @@ body{
 .twitchgrad {
   background-image: linear-gradient(rgb(48, 48, 48), rgb(125, 29, 113));
 }
+
+.drop-shadow1 {
+  box-shadow: 3px 20px 23px 5.6px rgba(0, 0, 0, 0.8);
+}
+.photo-b-border {
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
