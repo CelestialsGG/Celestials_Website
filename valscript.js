@@ -3,65 +3,22 @@ playercardContainer.innerHTML = ''
 let temp = []
 const players = [
     {
-        name: 'Aki', socials: {twitch: "", twitter: '', youtube: ""} 
+        name: 'LFP', tagline: "LFP",socials: {twitch: "", twitter: '', youtube: ""} 
     },
     {
-        name: 'Askuru', socials: {twitch: "joe", twitter: '', youtube: ""} 
+        name: 'LFP',tagline: "LFP", socials: {twitch: "", twitter: '', youtube: ""} 
     },
     {
-        name: 'Cloudsteppa', socials: {twitch: "", twitter: '', youtube: ""} 
+        name: 'LFP',tagline: "LFP", socials: {twitch: "", twitter: '', youtube: ""} 
     },
     {
-        name: 'Craweldaddy', socials: {twitch: "", twitter: '', youtube: ""} 
+        name: 'LFP',tagline: "LFP", socials: {twitch: "", twitter: '', youtube: ""} 
     },
     {
-        name: 'Dermadexx', socials: {twitch: "", twitter: '', youtube: ""} 
+        name: 'LFP',tagline: "LFP", socials: {twitch: "", twitter: '', youtube: ""} 
     },
-    {
-        name: 'Drew', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Eblic', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Grim', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Heather', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Izzo', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Kyle', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Morni', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Navarone', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Raidken', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Raldin', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Rarely', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Rhonabu', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-       name: 'Teddy', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Torqaan', socials: {twitch: "", twitter: '', youtube: ""} 
-    }
-
     
-]
+      ]
 
 function renderPlayers() {
     for (let i = 0; i < players.length; i++) {
@@ -93,7 +50,7 @@ function renderPlayers() {
         </div>
         <div class="row">
           <div class="col">
-            <h5 class="text-center text-light">Guild Leader</h5>
+            <h5 class="text-center text-light">${players[i].tagline}</h5>
           </div>
         </div>
         <div class="row justify-content-around mb-2 ">

@@ -1,6 +1,6 @@
 let clinetId = "1jld8u8wgq6gptu0aqtn4pwi3icyo4";
 let clinetSecret = "xt2ee0rwaj9vuyvbpf6qjiwz8apo2o";
-let channelList=['tarzaned','m0xyy','bigrodentt', 'tragiicisbad', 'loltyler1', 'tarik', 'shroud', 'emongg', 'landonkyle', 'summit1g']
+let channelList=['tarzaned','m0xyy','bigrodentt', 'tragiicisbad', 'tarik', 'shroud', 'emongg', 'landonkyle', 'summit1g']
 
 function getTwitchAuthorization() {
     let url = `https://id.twitch.tv/oauth2/token?client_id=${clinetId}&client_secret=${clinetSecret}&grant_type=client_credentials`;
@@ -53,7 +53,7 @@ async function getStreams(channelList) {
 
 function renderStreams(data) {
     let { data: streams } = data;
-    let streamsContainer = document.getElementById("joemama");
+    let streamsContainer = document.getElementById("insert");
     let offlineContainer = document.getElementById("offlineContainer");
     streamsContainer.innerHTML = "";
     let temprow = []
@@ -78,23 +78,22 @@ function renderStreams(data) {
         counter +=1
 
         temprow.push(`
-            <a  style="text-decoration: none!important;"href="https://twitch.tv/${user_name}" class=" col-md-3 col-sm-12 mt-2 border p-0 twitchgrad">
+            <a  style="text-decoration: none!important;"href="https://twitch.tv/${user_name}" class="border rounded-xl col-12 col-md-3 mt-2 twitchgrad drop-shadow1">
                 <div class="row">
-                <img class=" img-fluid"src="${hdThumbnail}" alt="" />
+                <img class=" rounded-photo rounded-xlphoto img-fluid border-light p-0"src="${hdThumbnail}" alt="" />
                 </div>
-                <div class="row">
-                <div class="col"><h5 class="text-center text-light" style="font-weight: bold">${title}</h5></div>
+                <div class="row p-0 border-top border-light">
+                <div class="col"><h5 class="text-center text-light p-0">${title}</h5></div>
                 </div>
-
-                <div class="row">
+                <div class="row align-items-center">
                 
-                    <div class="col">
-                    <h5 style="font-weight: bold" class="text-left text-light">${user_name}</h5>
+                    <div class="col p-0 ">
+                    <h5 class="text-center text-light">${user_name}</h5>
                     </div>
-                    <div class="col-4"><h5  style="font-weight: bold"class="text-center text-light">${viewer_count
+                    <div class="col col-md-4 p-0"><h5  class="text-center text-light">${viewer_count
                         .toString()
                         .replace(/\B(?=(\d{3})+(?!\d))/g, ",")} Viewers</h5 class="text-center text-light"></div>
-                    <div class="col"><h5 style="font-weight: bold" class="text-center text-light">${game_name}</h5></div>
+                    <div class="col"><h5  class="text-center text-light">${game_name}</h5></div>
                 </div>
                
             </a>
