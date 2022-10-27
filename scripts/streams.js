@@ -1,6 +1,6 @@
 let clinetId = "1jld8u8wgq6gptu0aqtn4pwi3icyo4";
 let clinetSecret = "xt2ee0rwaj9vuyvbpf6qjiwz8apo2o";
-let channelList=['tarzaned','m0xyy','bigrodentt', 'tragiicisbad', 'tarik', 'shroud', 'emongg', 'landonkyle', 'summit1g']
+let channelList=['viper','tarzaned','m0xyy','bigrodentt', 'tragiicisbad', 'tarik', 'shroud', 'emongg', 'landonkyle', 'summit1g']
 
 function getTwitchAuthorization() {
     let url = `https://id.twitch.tv/oauth2/token?client_id=${clinetId}&client_secret=${clinetSecret}&grant_type=client_credentials`;
@@ -75,8 +75,11 @@ function renderStreams(data) {
             streamsContainer.appendChild(temprowoffiline)
             
         }
-        counter +=1
-
+        if (title.length > 38) {
+            title = title.substring(0, 37)
+            title+=".."
+        }
+        counter+=1
         temprow.push(`
             <a  style="text-decoration: none!important;"href="https://twitch.tv/${user_name}" class="border rounded-xl col-12 col-md-3 mt-2 twitchgrad drop-shadow1">
                 <div class="row">
