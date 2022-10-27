@@ -85,6 +85,7 @@ function renderStreams(data) {
                 <div class="row p-0 border-top border-light">
                 <div class="col"><h5 class="text-center text-light p-0">${title}</h5></div>
                 </div>
+
                 <div class="row align-items-center">
                 
                     <div class="col p-0 ">
