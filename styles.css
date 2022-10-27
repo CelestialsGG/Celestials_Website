@@ -74,6 +74,12 @@
   margin-right: 30px;
 }
 
+.navgradtest {
+  background: rgb(249,163,56);
+background: linear-gradient(90deg, rgba(249,163,56,1) 21%, rgba(129,18,137,1) 85%);
+
+}
+
 #grad1 {
   height: 100%;
   background-color: rgb(
@@ -151,6 +157,9 @@
 
 .drop-shadow1 {
   box-shadow: 3px 20px 23px 5.6px rgba(0, 0, 0, 0.8);
+}
+.drop-shadownav {
+  box-shadow: 0px 4px 30px 5.6px rgba(0, 0, 0, 0.8);
 }
 .photo-b-border {
   border-bottom: 1px solid rgb(255, 255, 255);
