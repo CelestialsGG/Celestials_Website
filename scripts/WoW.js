@@ -2,79 +2,79 @@ let playercardContainer = document.getElementById('insert')
 playercardContainer.innerHTML = ''
 let temp = []
 const players = [
-    {
-        name: 'Aki', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Askuru', socials: {twitch: "joe", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Cloudsteppa', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Craweldaddy', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Dermadexx', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Drew', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Eblic', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Grim', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Heather', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Izzo', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Kyle', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Morni', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Navarone', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Raidken', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Raldin', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Rarely', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Rhonabu', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-       name: 'Teddy', socials: {twitch: "", twitter: '', youtube: ""} 
-    },
-    {
-        name: 'Torqaan', socials: {twitch: "", twitter: '', youtube: ""} 
-    }
+  {
+    name: 'Kyle', message: "Guild Leader", socials: { twitch: "", twitter: '', youtube: "" }
+  },
+  {
+    name: 'Drew', message: "Pee is stored in the balls", socials: { twitch: "", twitter: '', youtube: "" }
+  },
+  {
+    name: 'Eblic', message: "Officer", socials: { twitch: "", twitter: '', youtube: "" }
+  },
+  {
+    name: 'Grim', message: "Officer", socials: { twitch: "", twitter: '', youtube: "" }
+  },
+  {
+    name: 'Heather', message: "Officer", socials: { twitch: "", twitter: '', youtube: "" }
+  },
+  {
+    name: 'Morni', message: "Officer", socials: { twitch: "", twitter: '', youtube: "" }
+  },
+  {
+    name: 'Raldin', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
+  },
+  {
+    name: 'Aki', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
+  },
+  {
+    name: 'Askuru', message: "Raider", socials: { twitch: "joe", twitter: '', youtube: "" }
+  },
+  {
+    name: 'Cloudsteppa', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
+  },
+  {
+    name: 'Craweldaddy', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
+  },
+  {
+    name: 'Dermadexx', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
+  },
+  {
+    name: 'Izzo', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
+  },
+  {
+    name: 'Navarone', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
+  },
+  {
+    name: 'Raidken', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
+  },
+  {
+    name: 'Rarely', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
+  },
+  {
+    name: 'Rhonabu', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
+  },
+  {
+    name: 'Teddy', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
+  },
+  {
+    name: 'Torqaan', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
+  }
 
-    
+
 ]
 
 function renderPlayers() {
-    for (let i = 0; i < players.length; i++) {
-        if (i % 4 == 0 && i !=0) {
-          console.log('joe')
+  for (let i = 0; i < players.length; i++) {
+    if (i % 4 == 0 && i != 0) {
+      console.log('joe')
 
-          let temprow = createElement('row mt-4 justify-content-around', temp)
-          temp = []
+      let temprow = createElement('row mt-4 justify-content-around', temp)
+      temp = []
 
-          playercardContainer.appendChild(temprow)
-          
-      }
-        temp.push(`<div
+      playercardContainer.appendChild(temprow)
+
+    }
+    temp.push(`<div
         id="playercard"
         class="col-md-5 col-sm-8 col-lg-2 rounded-xl mt-5 drop-shadow1"
       >
@@ -93,7 +93,7 @@ function renderPlayers() {
         </div>
         <div class="row">
           <div class="col">
-            <h5 class="text-center text-light">Guild Leader</h5>
+            <h5 class="text-center text-light">${players[i].message}</h5>
           </div>
         </div>
         <div class="row justify-content-around mb-2 ">
@@ -111,10 +111,10 @@ function renderPlayers() {
           </a>
         </div>
       </div>`)
-    
-    }
-    let temprow2 = createElement('row mt-4 justify-content-around',temp)
-    playercardContainer.appendChild(temprow2)
+
+  }
+  let temprow2 = createElement('row mt-4 justify-content-around', temp)
+  playercardContainer.appendChild(temprow2)
 
 }
 
@@ -122,7 +122,7 @@ function createElement(classes, content) {
   let final = document.createElement('div')
   final.className = classes
   for (let i = 0; i < content.length; i++) {
-      final.innerHTML+= content[i]
+    final.innerHTML += content[i]
   }
   return final
 
