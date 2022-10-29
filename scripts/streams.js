@@ -1,3 +1,4 @@
+let clinetId = "1jld8u8wgq6gptu0aqtn4pwi3icyo4"; let clinetSecret = "xt2ee0rwaj9vuyvbpf6qjiwz8apo2o";
 let channelList = ['landonkyle', 'bigrodentt', 'tragiicisbad', 'crawel077']
 
 function getTwitchAuthorization() {
