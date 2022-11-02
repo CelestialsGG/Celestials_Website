@@ -7,27 +7,9 @@ const players = [
   },
   {
     name: 'Drew', message: "Pee is stored in the balls", socials: { twitch: "", twitter: '', youtube: "" }
-  },
-  {
-    name: 'Eblic', message: "Officer", socials: { twitch: "", twitter: '', youtube: "" }
-  },
-  {
-    name: 'Grim', message: "Officer", socials: { twitch: "", twitter: '', youtube: "" }
-  },
-  {
-    name: 'Heather', message: "Officer", socials: { twitch: "", twitter: '', youtube: "" }
-  },
+  }, 
   {
     name: 'Morni', message: "Officer", socials: { twitch: "", twitter: '', youtube: "" }
-  },
-  {
-    name: 'Raldin', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
-  },
-  {
-    name: 'Aki', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
-  },
-  {
-    name: 'Askuru', message: "Raider", socials: { twitch: "joe", twitter: '', youtube: "" }
   },
   {
     name: 'Cloudsteppa', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
@@ -36,25 +18,11 @@ const players = [
     name: 'Craweldaddy', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
   },
   {
-    name: 'Dermadexx', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
-  },
-  {
-    name: 'Izzo', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
-  },
-  {
     name: 'Navarone', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
   },
-  {
-    name: 'Raidken', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
-  },
+
   {
     name: 'Rarely', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
-  },
-  {
-    name: 'Rhonabu', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
-  },
-  {
-    name: 'Teddy', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
   },
   {
     name: 'Torqaan', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
