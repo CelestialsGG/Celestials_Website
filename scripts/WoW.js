@@ -6,7 +6,7 @@ const players = [
     name: 'Kyle', message: "Guild Leader", socials: { twitch: "", twitter: '', youtube: "" }
   },
   {
-    name: 'Drew', message: "Pee is stored in the balls", socials: { twitch: "", twitter: '', youtube: "" }
+    name: 'Drew', message: "Lead Officer", socials: { twitch: "theedrewski", twitter: '', youtube: "" }
   }, 
   {
     name: 'Morni', message: "Officer", socials: { twitch: "", twitter: '', youtube: "" }
@@ -19,6 +19,10 @@ const players = [
   },
   {
     name: 'Navarone', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
+  },
+
+  { 
+    name: 'Nilloc', message: "Raider", socials: { twitch: "collindood", twitter: '', youtube: "" } 
   },
 
   {
@@ -34,13 +38,9 @@ const players = [
 function renderPlayers() {
   for (let i = 0; i < players.length; i++) {
     if (i % 4 == 0 && i != 0) {
-      console.log('joe')
-
       let temprow = createElement('row mt-4 justify-content-around', temp)
       temp = []
-
       playercardContainer.appendChild(temprow)
-
     }
     temp.push(`<div
         id="playercard"
@@ -65,16 +65,16 @@ function renderPlayers() {
           </div>
         </div>
         <div class="row justify-content-around mb-2 ">
-          <a href="https://twitch.tv/${players[i].twitch}"class="col-3 d-flex justify-content-center">
+          <a href="https://twitch.tv/${players[i].socials.twitch}"class="col-3 d-flex justify-content-center">
             <img src="../svgs/twitch.svg" alt="" />
           </a>
-          <a href="https://twitter.com/${players[i].twitter}"class="col-3 d-flex justify-content-center">
+          <a href="https://twitter.com/${players[i].socials.twitter}"class="col-3 d-flex justify-content-center">
             <img src="../svgs/twitter.svg" alt="" />
           </a>
           <a href="https://tiktok.com/${players[i]}"class="col-3 d-flex justify-content-center">
             <img src="../svgs/tiktok.svg" alt="" />
           </a>
-          <a href="https://youtube.com/${players[i].youtube}"class="col-3 d-flex justify-content-center">
+          <a href="https://youtube.com/${players[i].socials.youtube}"class="col-3 d-flex justify-content-center">
             <img src="../svgs/youtube.svg" alt="" />
           </a>
         </div>
