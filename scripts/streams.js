@@ -80,7 +80,8 @@ function renderStreams(data) {
         }
         counter += 1
         temprow.push(`
-            <a  style="text-decoration: none!important;"href="https://twitch.tv/${user_name}" class="border rounded-xl col-12 col-md-3 mt-2 twitchgrad drop-shadow1">
+            <a target="_blank"
+            rel="noopener noreferrer" style="text-decoration: none!important;"href="https://twitch.tv/${user_name}" class="border rounded-xl col-12 col-md-3 mt-2 twitchgrad drop-shadow1">
                 <div class="row">
                 <img class=" rounded-photo rounded-xlphoto img-fluid border-light p-0"src="${hdThumbnail}" alt="" />
                 </div>
@@ -140,7 +141,8 @@ function renderStreams(data) {
         }
         row.push(`
         <div class="col-12 col-md-3">
-        <a style="text-decoration: none!important;"href="https://twitch.tv/${channelList[i]}">
+        <a target="_blank"
+        rel="noopener noreferrer" style="text-decoration: none!important;"href="https://twitch.tv/${channelList[i]}">
         <h5 class="text-center text-light">${channelList[i]}</h5></a>
         </div> 
         `)

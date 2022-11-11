@@ -54,17 +54,21 @@ function renderPlayers() {
           </div>
         </div>
         <div class="row justify-content-around mb-2 ">
-          <a href="https://twitch.tv/${players[i].twitch}"class="col-3 d-flex justify-content-center">
-            <img src="../svgs/twitch.svg" alt="" />
+          <a target="_blank"
+          rel="noopener noreferrer" href="https://twitch.tv/${players[i].twitch}"class="col-3 d-flex justify-content-center">
+            <img src="svgs/twitch.svg" alt="" />
           </a>
-          <a href="https://twitter.com/${players[i].twitter}"class="col-3 d-flex justify-content-center">
-            <img src="../svgs/twitter.svg" alt="" />
+          <a target="_blank"
+          rel="noopener noreferrer" href="https://twitter.com/${players[i].twitter}"class="col-3 d-flex justify-content-center">
+            <img src="svgs/twitter.svg" alt="" />
           </a>
-          <a href="https://tiktok.com/${players[i]}"class="col-3 d-flex justify-content-center">
-            <img src="../svgs/tiktok.svg" alt="" />
+          <a target="_blank"
+          rel="noopener noreferrer" href="https://tiktok.com/${players[i]}"class="col-3 d-flex justify-content-center">
+            <img src="svgs/tiktok.svg" alt="" />
           </a>
-          <a href="https://youtube.com/${players[i].youtube}"class="col-3 d-flex justify-content-center">
-            <img src="../svgs/youtube.svg" alt="" />
+          <a target="_blank"
+          rel="noopener noreferrer" href="https://youtube.com/${players[i].youtube}"class="col-3 d-flex justify-content-center">
+            <img src="svgs/youtube.svg" alt="" />
           </a>
         </div>
       </div>`)
