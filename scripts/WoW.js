@@ -49,7 +49,7 @@ function renderPlayers() {
         <div class="row">
           <img
             class="test-bg-color img-fluid p-0 rounded-xlphoto photo-b-border"
-            src="../NEWHEADSHOTS/${players[i].name}.png"
+            src="NEWHEADSHOTS/${players[i].name}.png"
             alt=""
           />
         </div>
@@ -66,16 +66,16 @@ function renderPlayers() {
         </div>
         <div class="row justify-content-around mb-2 ">
           <a href="https://twitch.tv/${players[i].socials.twitch}"class="col-3 d-flex justify-content-center">
-            <img src="../svgs/twitch.svg" alt="" />
+            <img src="svgs/twitch.svg" alt="" />
           </a>
           <a href="https://twitter.com/${players[i].socials.twitter}"class="col-3 d-flex justify-content-center">
-            <img src="../svgs/twitter.svg" alt="" />
+            <img src="svgs/twitter.svg" alt="" />
           </a>
           <a href="https://tiktok.com/${players[i]}"class="col-3 d-flex justify-content-center">
-            <img src="../svgs/tiktok.svg" alt="" />
+            <img src="svgs/tiktok.svg" alt="" />
           </a>
           <a href="https://youtube.com/${players[i].socials.youtube}"class="col-3 d-flex justify-content-center">
-            <img src="../svgs/youtube.svg" alt="" />
+            <img src="svgs/youtube.svg" alt="" />
           </a>
         </div>
       </div>`)

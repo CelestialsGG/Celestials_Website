@@ -38,7 +38,7 @@ function renderPlayers() {
         <div class="row">
           <img
             class="test-bg-color img-fluid p-0 rounded-xlphoto photo-b-border"
-            src="../NEWHEADSHOTS/${players[i].name}.png"
+            src="NEWHEADSHOTS/${players[i].name}.png"
             alt=""
           />
         </div>
