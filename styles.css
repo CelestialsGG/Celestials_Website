@@ -2,6 +2,17 @@
   zoom: 1.0;
   width: extend-to-zoom;
 }
+@font-face {
+  font-family: myFirstFont;
+  src: url(Fonts/Elemental-End.ttf);
+}
+
+#testfont {
+  font-family: myFirstFont;
+}
+
+
+
 
 #playercard {
   border-width: 1px;
