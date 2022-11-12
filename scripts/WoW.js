@@ -17,6 +17,9 @@ const players = [
   {
     name: 'Cloudsteppa', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
   },
+  {
+    name: 'Venividivici', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
+  },
   { 
     name: 'Rain Vongola', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" } 
   },
