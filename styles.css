@@ -149,10 +149,9 @@ background: linear-gradient(90deg, rgba(249,163,56,1) 21%, rgba(129,18,137,1) 85
 }
 
 #mainpagebackground {
-  background-image: url("images/wowbackground.png");
+  background-image: url("svgs/solo_shuffle.svg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  object-position: 100% 0;
 
 }
 
@@ -181,3 +180,17 @@ background: linear-gradient(90deg, rgba(249,163,56,1) 21%, rgba(129,18,137,1) 85
   border-bottom: 1px solid rgb(255, 255, 255);
 }
 
+#tournament-image {
+  background-image: url("svgs/solo_shuffle.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  object-position: 100% 0;
+}
+
+
+#tournament-image-info {
+  background-image: url("svgs/solo_shuffle_info.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  object-position: 100% 0;
+}

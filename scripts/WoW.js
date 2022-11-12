@@ -31,6 +31,9 @@ const players = [
     name: 'Torqaan', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
   },
   {
+    name: 'Noxus', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
+  },
+  {
     name: 'Navarone', message: "Member", socials: { twitch: "", twitter: '', youtube: "" }
   },
   { 
