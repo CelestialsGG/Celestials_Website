@@ -15,10 +15,10 @@ const players = [
     name: 'Morni', message: "Officer", socials: { twitch: "", twitter: '', youtube: "" }
   },
   {
-    name: 'Cloudsteppa', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
+    name: 'Venividivici', message: "Treasurer", socials: { twitch: "", twitter: '', youtube: "" }
   },
   {
-    name: 'Venividivici', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
+    name: 'Cloudsteppa', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
   },
   { 
     name: 'Rain Vongola', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" } 
