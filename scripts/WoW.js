@@ -3,7 +3,7 @@ playercardContainer.innerHTML = ''
 let temp = []
 const players = [
   {
-    name: 'Kyle', message: "Guild Leader", socials: { twitch: "", twitter: '', youtube: "" }
+    name: 'Kyle', message: "Guild Leader", socials: { twitch: "landonkyle", twitter: '_kylelandon', youtube: "" }
   },
   {
     name: 'Drew', message: "Lead Officer", socials: { twitch: "theedrewski", twitter: '', youtube: "" }
@@ -20,6 +20,9 @@ const players = [
   {
     name: 'Cloudsteppa', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
   },
+  {
+    name: 'Noxus', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
+  },
   { 
     name: 'Rain Vongola', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" } 
   },
@@ -29,9 +32,6 @@ const players = [
   },
   {
     name: 'Torqaan', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
-  },
-  {
-    name: 'Noxus', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
   },
   {
     name: 'Navarone', message: "Member", socials: { twitch: "", twitter: '', youtube: "" }
