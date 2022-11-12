@@ -6,12 +6,21 @@
   font-family: myFirstFont;
   src: url(Fonts/Elemental-End.ttf);
 }
+@font-face {
+  font-family: joe;
+  src: url(Fonts/Elemental-End-italic.ttf);
+}
+
 
 #testfont {
   font-family: myFirstFont;
 }
 
+#secondary {
+  font-family: joe;
 
+
+}
 
 
 #playercard {

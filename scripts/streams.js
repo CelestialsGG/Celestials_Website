@@ -1,5 +1,5 @@
 let clinetId = "1jld8u8wgq6gptu0aqtn4pwi3icyo4"; let clinetSecret = "xt2ee0rwaj9vuyvbpf6qjiwz8apo2o";
-let channelList = ['landonkyle', 'theedrewski', 'bigrodentt', 'tragiicisbad', 'crawel077', 'collindood']
+let channelList = ['landonkyle', 'theedrewski','whiiskeyz', 'bigrodentt', 'tragiicisbad', 'crawel077', 'collindood']
 
 function getTwitchAuthorization() {
     let url = `https://id.twitch.tv/oauth2/token?client_id=${clinetId}&client_secret=${clinetSecret}&grant_type=client_credentials`;
