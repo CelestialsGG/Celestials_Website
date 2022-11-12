@@ -9,28 +9,30 @@ const players = [
     name: 'Drew', message: "Lead Officer", socials: { twitch: "theedrewski", twitter: '', youtube: "" }
   }, 
   {
+    name: 'Craweldaddy', message: "Officer", socials: { twitch: "", twitter: '', youtube: "" }
+  },
+  {
     name: 'Morni', message: "Officer", socials: { twitch: "", twitter: '', youtube: "" }
   },
   {
     name: 'Cloudsteppa', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
   },
-  {
-    name: 'Craweldaddy', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
-  },
-  {
-    name: 'Navarone', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
-  },
-
   { 
-    name: 'Nilloc', message: "Raider", socials: { twitch: "collindood", twitter: '', youtube: "" } 
+    name: 'Rain Vongola', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" } 
   },
-
+  
   {
     name: 'Rarely', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
   },
   {
     name: 'Torqaan', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
-  }
+  },
+  {
+    name: 'Navarone', message: "Member", socials: { twitch: "", twitter: '', youtube: "" }
+  },
+  { 
+    name: 'Nilloc', message: "Member", socials: { twitch: "collindood", twitter: '', youtube: "" } 
+  },
 
 
 ]
