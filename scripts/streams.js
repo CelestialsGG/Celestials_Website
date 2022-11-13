@@ -1,6 +1,25 @@
 let clinetId = "1jld8u8wgq6gptu0aqtn4pwi3icyo4"; let clinetSecret = "xt2ee0rwaj9vuyvbpf6qjiwz8apo2o";
 let channelList = ['landonkyle', 'theedrewski','whiiskeyz', 'bigrodentt', 'tragiicisbad', 'crawel077', 'collindood']
 
+
+function generateAnimation(count, streams) {
+    console.log(count)
+    if ( ([1,4,7, 10, 13, 16, 19, 22]).includes(count)) {
+        return 'animate__fadeInLeft'
+    }
+    if (([3, 6, 9, 12, 15, 18, 21, 24]).includes(count)) {
+        return 'animate__fadeInRight'
+    }
+    if (count == streams.length)    {
+        return 'animate__fadeInRight'
+    }
+    
+    return 'animate__fadeIn'
+    
+
+}
+
+
 function getTwitchAuthorization() {
     let url = `https://id.twitch.tv/oauth2/token?client_id=${clinetId}&client_secret=${clinetSecret}&grant_type=client_credentials`;
 
@@ -58,7 +77,7 @@ function renderStreams(data) {
     let temprow = []
     let temprowonline = 0
 
-
+    let animationCounter = 0
 
     let counter = 0
     streams.forEach((stream) => {
@@ -79,9 +98,10 @@ function renderStreams(data) {
             title += ".."
         }
         counter += 1
+        animationCounter += 1
         temprow.push(`
             <a target="_blank"
-            rel="noopener noreferrer" style="text-decoration: none!important;"href="https://twitch.tv/${user_name}" class="border rounded-xl col-12 col-md-3 mt-2 twitchgrad drop-shadow1">
+            rel="noopener noreferrer" style="text-decoration: none!important;"href="https://twitch.tv/${user_name}" class="animate__animated  ${generateAnimation(animationCounter, streams)} border rounded-xl col-12 col-md-3 mt-2 twitchgrad drop-shadow1">
                 <div class="row">
                 <img class=" rounded-photo rounded-xlphoto img-fluid border-light p-0"src="${hdThumbnail}" alt="" />
                 </div>
@@ -140,7 +160,7 @@ function renderStreams(data) {
 
         }
         row.push(`
-        <div class="col-12 col-md-3">
+        <div class="col-12 col-md-3 animate__animated animate__fadeInUp">
         <a target="_blank"
         rel="noopener noreferrer" style="text-decoration: none!important;"href="https://twitch.tv/${channelList[i]}">
         <h5 class="text-center text-light">${channelList[i]}</h5></a>

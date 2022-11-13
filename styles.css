@@ -185,6 +185,7 @@ background: linear-gradient(90deg, rgba(249,163,56,1) 21%, rgba(129,18,137,1) 85
   background-repeat: no-repeat;
   background-size: 100% 100%;
   object-position: 100% 0;
+  
 }
 
 
@@ -193,6 +194,7 @@ background: linear-gradient(90deg, rgba(249,163,56,1) 21%, rgba(129,18,137,1) 85
   background-repeat: no-repeat;
   background-size: 100% 100%;
   object-position: 100% 0;
+  
 }
 
 @media (min-width:1000px) {

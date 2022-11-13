@@ -33,7 +33,7 @@ function renderPlayers() {
       }
         temp.push(`<div
         id="playercard"
-        class="col-md-5 col-sm-8 col-lg-2 rounded-xl mt-5 drop-shadow1"
+        class="col-md-5 col-sm-8 col-lg-2 rounded-xl mt-5 drop-shadow1 animate__animated animate__fadeInUp"
       >
         <div class="row">
           <img
