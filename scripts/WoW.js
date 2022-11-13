@@ -1,6 +1,7 @@
 let playercardContainer = document.getElementById('insert')
 playercardContainer.innerHTML = ''
 let temp = []
+
 const players = [
   {
     name: 'Kyle', message: "Guild Leader", socials: { twitch: "landonkyle", twitter: '_kylelandon', youtube: "" }
@@ -33,15 +34,16 @@ const players = [
   {
     name: 'Torqaan', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
   },
+  { 
+    name: 'Whiiskey', message: "Raider", socials: { twitch: "collindood", twitter: '', youtube: "" } 
+  },
   {
     name: 'Navarone', message: "Member", socials: { twitch: "", twitter: '', youtube: "" }
   },
   { 
     name: 'Nilloc', message: "Member", socials: { twitch: "collindood", twitter: '', youtube: "" } 
   },
-  { 
-    name: 'Whiiskey', message: "Member", socials: { twitch: "collindood", twitter: '', youtube: "" } 
-  },
+
 
 
 ]
@@ -111,4 +113,6 @@ function createElement(classes, content) {
 
 }
 
-renderPlayers();
+
+renderPlayers()
+
