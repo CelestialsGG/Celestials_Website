@@ -39,6 +39,9 @@ const players = [
   { 
     name: 'Nilloc', message: "Member", socials: { twitch: "collindood", twitter: '', youtube: "" } 
   },
+  { 
+    name: 'Whiiskey', message: "Member", socials: { twitch: "collindood", twitter: '', youtube: "" } 
+  },
 
 
 ]
