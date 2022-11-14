@@ -204,4 +204,17 @@ function createElement(classes, content) {
 
 }
 
+
+
+//joe = fetch('http://127.0.0.1:8000/addplayers?name=joe?age=12?city=chicagohttp://127.0.0.1:8000/addplayers?name=dasd&age=das&city=das')
+
+
+
+//hoe = joe.then((res) => res.json())
+//hoe.then((data) => {
+//    console.log(data)})
+
+
+//console.log(joe)
+
 getStreams(channelList);

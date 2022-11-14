@@ -46,7 +46,7 @@ function renderPlayers() {
         <div class="row">
           <div class="col">
             <h4 class="text-center text-light">${(players[i].name).toUpperCase()}</h4>
-          </div>
+        /div>
         </div>
         <div class="row">
           <div class="col">
