@@ -111,7 +111,7 @@ function renderStreams(data) {
                 <div class="row align-items-center">
                 
                     <div class="col p-0 ">
-                    <h5 class="text-center text-light">${user_name}</h5>
+                    <h5 class="text-center title">${user_name}</h5>
                     </div>
                     <div class="col col-md-4 p-0"><h5  class="text-center text-light">${viewer_count
                 .toString()
