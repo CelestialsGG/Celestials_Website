@@ -207,8 +207,24 @@ background: linear-gradient(90deg, rgba(249,163,56,1) 21%, rgba(129,18,137,1) 85
 }
 
 
+@media (max-width: 500px) {
+  .joemama {
+    height: 50vh;
+  }
+    
+  }
+
+  @media (min-width: 501px) {
+    .joemama2 {
+      height: 116vh;
+    }
+      
+    }
+
+
+
 #about-us-image {
-  background-image: url("svgs/about_us.svg");
+  background-image: url("images/BACKGROUND.png");
   background-repeat: no-repeat;
   object-fit: contain;
   background-position: center center;
