@@ -20,6 +20,7 @@ function generateAnimation(count, streams) {
 }
 
 
+
 function getTwitchAuthorization() {
     let url = `https://id.twitch.tv/oauth2/token?client_id=${clinetId}&client_secret=${clinetSecret}&grant_type=client_credentials`;
 
@@ -111,7 +112,7 @@ function renderStreams(data) {
                 <div class="row align-items-center">
                 
                     <div class="col p-0 ">
-                    <h5 class="text-center text-light">${user_name}</h5>
+                    <h5 class="text-center title">${user_name}</h5>
                     </div>
                     <div class="col col-md-4 p-0"><h5  class="text-center text-light">${viewer_count
                 .toString()
