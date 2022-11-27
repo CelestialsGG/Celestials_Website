@@ -1,58 +1,23 @@
 let playercardContainer = document.getElementById('insert')
 playercardContainer.innerHTML = ''
 let temp = []
+let final = []
+let ranks = ['Guild Leader', 'Lead Officer', 'Officer', "Treasurer", "Raider", "Member"]
+//const joe = fetch("http://ec2-3-145-21-220.us-east-2.compute.amazonaws.com/wowplayers")
+const joe = fetch("http://ec2-18-221-171-204.us-east-2.compute.amazonaws.com/wowplayers")
+joe.then((response) => {
+    return response.json()
+}).then((data) => {
+    console.log(data)
+    renderPlayers(data)
+  }
 
-const players = [
-  {
-    name: 'Kyle', message: "Guild Leader", socials: { twitch: "landonkyle", twitter: '_kylelandon', youtube: "" }
-  },
-  {
-    name: 'Drew', message: "Lead Officer", socials: { twitch: "theedrewski", twitter: '', youtube: "" }
-  }, 
-  {
-    name: 'Craweldaddy', message: "Officer", socials: { twitch: "", twitter: '', youtube: "" }
-  },
-  {
-    name: 'Morni', message: "Officer", socials: { twitch: "", twitter: '', youtube: "" }
-  },
-  {
-    name: 'Venividivici', message: "Treasurer", socials: { twitch: "", twitter: '', youtube: "" }
-  },
-  {
-    name: 'Asharrow', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
-  },
-  {
-    name: 'Cloudsteppa', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
-  },
-  {
-    name: 'Noxus', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
-  },
-  { 
-    name: 'Rain Vongola', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" } 
-  },
-  
-  {
-    name: 'Rarely', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
-  },
-  {
-    name: 'Torqaan', message: "Raider", socials: { twitch: "", twitter: '', youtube: "" }
-  },
-  { 
-    name: 'Whiiskey', message: "Raider", socials: { twitch: "collindood", twitter: '', youtube: "" } 
-  },
-  {
-    name: 'Navarone', message: "Member", socials: { twitch: "", twitter: '', youtube: "" }
-  },
-  { 
-    name: 'Nilloc', message: "Member", socials: { twitch: "collindood", twitter: '', youtube: "" } 
-  },
+)
 
-
-
-]
-
-function renderPlayers() {
-  for (let i = 0; i < players.length; i++) {
+function renderPlayers(data) {
+  data = data.data
+  for (let i = 0; i < data.length; i++) {
+    console.log(data[i].name)
     if (i % 4 == 0 && i != 0) {
       let temprow = createElement('row mt-4 justify-content-around', temp)
       temp = []
@@ -65,36 +30,36 @@ function renderPlayers() {
         <div class="row">
           <img
             class="test-bg-color img-fluid p-0 rounded-xlphoto photo-b-border"
-            src="NEWHEADSHOTS/${players[i].name}.png"
+            src="http://ec2-18-221-171-204.us-east-2.compute.amazonaws.com/${data[i].name}.png"
             alt=""
           />
         </div>
         
         <div class="row">
           <div class="col">
-            <h4 class="text-center text-light">${(players[i].name).toUpperCase()}</h4>
+            <h4 class="text-center text-light">${(data[i].name).toUpperCase()}</h4>
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <h5 class="text-center text-light">${players[i].message}</h5>
+            <h5 class="text-center text-light">${data[i].tagline}</h5>
           </div>
         </div>
         <div class="row justify-content-around mb-2 ">
           <a target="_blank"
-          rel="noopener noreferrer" href="https://twitch.tv/${players[i].socials.twitch}"class="col-3 d-flex justify-content-center">
+          rel="noopener noreferrer" href="https://twitch.tv/${data[i].twitch}"class="col-3 d-flex justify-content-center">
             <img src="svgs/twitch.svg" alt="" />
           </a>
           <a target="_blank"
-          rel="noopener noreferrer" href="https://twitter.com/${players[i].socials.twitter}"class="col-3 d-flex justify-content-center">
+          rel="noopener noreferrer" href="https://twitter.com/${data[i].twitter}"class="col-3 d-flex justify-content-center">
             <img src="svgs/twitter.svg" alt="" />
           </a>
           <a target="_blank"
-          rel="noopener noreferrer" href="https://tiktok.com/${players[i]}"class="col-3 d-flex justify-content-center">
+          rel="noopener noreferrer" href="https://tiktok.com/${data[i].tiktok}"class="col-3 d-flex justify-content-center">
             <img src="svgs/tiktok.svg" alt="" />
           </a>
           <a target="_blank"
-          rel="noopener noreferrer" href="https://youtube.com/${players[i].socials.youtube}"class="col-3 d-flex justify-content-center">
+          rel="noopener noreferrer" href="https://youtube.com/${data[i].youtube}"class="col-3 d-flex justify-content-center">
             <img src="svgs/youtube.svg" alt="" />
           </a>
         </div>
@@ -117,5 +82,5 @@ function createElement(classes, content) {
 }
 
 
-renderPlayers()
+//renderPlayers()
 

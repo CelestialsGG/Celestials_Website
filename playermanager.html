@@ -231,7 +231,7 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-auto">
-            <h5 class="text-white">API-KEY</h5>
+            <h5 class="text-white pt-1 mt-2">API-KEY</h5>
           </div>
           <div class="col-auto">
             <input
@@ -245,14 +245,23 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-4">
+          <div class="col-12 col-md-4">
             <form id="addPlayer" class="form-signin">
               <h2 class="form-signin-heading text-light text-center">
                 Manage Player
               </h2>
               <select id="method" name="method" class="form-select">
-                <option value="DELETE">Delete</option>
                 <option value="POST">Add</option>
+                <option value="DELETE">Delete</option>
+                <option value="PATCH">Edit</option>
+              </select>
+              <select id="rank" name="rank" class="form-select mt-2">
+                <option value="4">Raider</option>
+                <option value="0">Guild Leader</option>
+                <option value="1">Lead Officer</option>
+                <option value="2">Officer</option>
+                <option value="3">Custom</option>
+                <option value="5">Member</option>
               </select>
               <input
                 id="playerName"
@@ -269,6 +278,7 @@
                 name="tagline"
                 placeholder="Tagline"
               />
+
               <input
                 class="form-control mt-2"
                 type="text"
@@ -297,7 +307,6 @@
                 name="tiktok"
                 placeholder="Tiktok"
               />
-
               <button
                 class="btn btn-lg btn-primary btn-block mt-2"
                 type="submit"
@@ -306,8 +315,46 @@
               </button>
             </form>
           </div>
-          <div class="col-4"><p id="joemama"></p></div>
-          <div class="col-4"></div>
+          <div class="col-12 col-md-4">
+            <p class="text-white">
+              General usage: <br />
+              You must put the API key in the top box. <br />
+              You must select the method you want to use. <br />
+              You must ensure the rank dropdown is on the correct value <br />
+              <br />
+              To add a player: <br />
+              Name and Tagline required <br />Tagline should be the same as the
+              ranking, could make it custom if u want<br /><br />
+              To delete a player: <br />
+              Only name required <br /><br />
+              To edit a player: <br />
+              Name is all it needs to identify the player, then you can edit
+              only what u want to edit, be sure to keep rank dropdown the same
+            </p>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="row">
+              <div class="col">
+                <form id="photoupload" class="text-white">
+                  <input id="thephoto" type="file" name="image" />
+                  <button type="submit">Upload</button>
+                </form>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <p class="text-white bolds">
+                  The photo must be uploaded seperately for now <br />
+                  You must have a 4x5 image already cropped 800x1000 or
+                  400x500<br />
+                  You must also have the photo name match exactly what the
+                  persons name is and be a PNG<br />
+                  When you create a player, the name should have 1 capital
+                  letter to start as well as the photo so they match perfectly
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -372,12 +419,36 @@
       </div>
     </div>
     <script>
+      const uploadForm = document.getElementById("photoupload");
       const addPlayerForm = document.getElementById("addPlayer");
+      function handlePhotoForm(event) {
+        event.preventDefault();
+        let apikey = document.getElementById("api-key").value;
+        let updatetext = document.getElementById("joemama");
+        var formdata = new FormData();
+        formdata.append("avatar", thephoto.files[0], thephoto.files[0].name);
+
+        var requestOptions = {
+          method: "POST",
+          body: formdata,
+          redirect: "follow",
+        };
+
+        fetch(
+          //"http://ec2-3-145-21-220.us-east-2.compute.amazonaws.com/api/upload-avatar/?api-key=whydoesntthiswork",
+          `http://ec2-18-221-171-204.us-east-2.compute.amazonaws.com/api/upload-avatar/?api-key=${apikey}`,
+          requestOptions
+        )
+          .then((response) => response.text())
+          .then((result) => updatetext.innerText(result))
+          .catch((error) => updatetext.innerText(error));
+      }
       function handleForm(event) {
         event.preventDefault();
         res = document.getElementById("joemama");
         let name = document.getElementById("playerName").value;
         let tagline = document.getElementById("tagline").value;
+        let rank = parseInt(document.getElementById("rank").value);
         let twitter = document.getElementById("twitter").value;
         let youtube = document.getElementById("youtube").value;
         let twitch = document.getElementById("twitch").value;
@@ -385,12 +456,14 @@
         let apikey = document.getElementById("api-key").value;
         let formmethod = document.getElementById("method").value;
         var myHeaders = new Headers();
+        console.log(typeof document.getElementById("rank").value);
 
         myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
         var urlencoded = new URLSearchParams();
         urlencoded.append("name", name);
         urlencoded.append("tagline", tagline);
+        urlencoded.append("rank", rank);
         urlencoded.append("twitter", twitter);
         urlencoded.append("youtube", youtube);
         urlencoded.append("twitch", twitch);
@@ -403,7 +476,8 @@
         };
 
         fetch(
-          `http://127.0.0.1:3000/api/wowplayers/?api-key=${apikey}`,
+          //`http://ec2-3-145-21-220.us-east-2.compute.amazonaws.com/api/wowplayers/?api-key=${apikey}`,
+          `http://ec2-18-221-171-204.us-east-2.compute.amazonaws.com/api/wowplayers/?api-key=${apikey}`,
           requestOptions
         )
           .then((response) => response.text())
@@ -411,6 +485,7 @@
           .catch((error) => console.log("error", error));
       }
       addPlayerForm.addEventListener("submit", handleForm);
+      uploadForm.addEventListener("submit", handlePhotoForm);
     </script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
