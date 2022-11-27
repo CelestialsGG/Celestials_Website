@@ -4,7 +4,7 @@ let temp = []
 let final = []
 let ranks = ['Guild Leader', 'Lead Officer', 'Officer', "Treasurer", "Raider", "Member"]
 //const joe = fetch("http://ec2-3-145-21-220.us-east-2.compute.amazonaws.com/wowplayers")
-const joe = fetch("http://ec2-18-221-171-204.us-east-2.compute.amazonaws.com/wowplayers")
+const joe = fetch("https://ec2-18-221-171-204.us-east-2.compute.amazonaws.com/wowplayers")
 joe.then((response) => {
     return response.json()
 }).then((data) => {
@@ -30,7 +30,7 @@ function renderPlayers(data) {
         <div class="row">
           <img
             class="test-bg-color img-fluid p-0 rounded-xlphoto photo-b-border"
-            src="http://ec2-18-221-171-204.us-east-2.compute.amazonaws.com/${data[i].name}.png"
+            src="https://ec2-18-221-171-204.us-east-2.compute.amazonaws.com/${data[i].name}.png"
             alt=""
           />
         </div>
