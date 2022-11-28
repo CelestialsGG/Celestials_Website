@@ -1,5 +1,5 @@
 let clinetId = "1jld8u8wgq6gptu0aqtn4pwi3icyo4"; let clinetSecret = "xt2ee0rwaj9vuyvbpf6qjiwz8apo2o";
-let channelList = ['landonkyle', 'theedrewski','whiiskeyz', 'bigrodentt', 'tragiicisbad', 'crawel077', 'collindood']
+let channelList = ['landonkyle', 'theedrewski','whiiskeyz', 'bigrodentt', 'tragiicisbad', 'crawel077','vorgol13', 'collindood']
 
 
 function generateAnimation(count, streams) {
