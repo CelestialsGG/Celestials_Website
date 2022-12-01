@@ -5,7 +5,8 @@ let final = []
 let ranks = ['Guild Leader', 'Lead Officer', 'Officer', "Treasurer", "Raider", "Member"]
 //const joe = fetch("http://ec2-3-145-21-220.us-east-2.compute.amazonaws.com/wowplayers")
 //const joe = fetch("https://ec2-18-221-171-204.us-east-2.compute.amazonaws.com/wowplayers")
-const joe = fetch("https://celestialsapi.parkergagliano.com/wowplayers")
+//const joe = fetch("https://celestialsapi.parkergagliano.com/wowplayers")
+const joe = fetch("http://127.0.0.1:1000/wowplayers")
 joe.then((response) => {
     return response.json()
 }).then((data) => {
@@ -16,7 +17,7 @@ joe.then((response) => {
 )
 
 function renderPlayers(data) {
-  data = data.data
+  data = data
   for (let i = 0; i < data.length; i++) {
     console.log(data[i].name)
     if (i % 4 == 0 && i != 0) {
@@ -30,8 +31,9 @@ function renderPlayers(data) {
       >
         <div class="row">
           <img
+            style= "max-height: 350px"
             class="test-bg-color img-fluid p-0 rounded-xlphoto photo-b-border"
-            src="https://celestialsapi.parkergagliano.com/${data[i].name}.png"
+            src="http://127.0.0.1:1000/${data[i].name + "." + data[i].imageextention}"
             alt=""
           />
         </div>

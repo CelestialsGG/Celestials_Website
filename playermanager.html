@@ -307,6 +307,7 @@
                 name="tiktok"
                 placeholder="Tiktok"
               />
+              <input id="thephoto" type="file" name="image" />
               <button
                 class="btn btn-lg btn-primary btn-block mt-2"
                 type="submit"
@@ -333,14 +334,7 @@
             </p>
           </div>
           <div class="col-12 col-md-4">
-            <div class="row">
-              <div class="col">
-                <form id="photoupload" class="text-white">
-                  <input id="thephoto" type="file" name="image" />
-                  <button type="submit">Upload</button>
-                </form>
-              </div>
-            </div>
+            <div class="row"></div>
             <div class="row">
               <div class="col">
                 <p class="text-white bolds">
@@ -419,30 +413,7 @@
       </div>
     </div>
     <script>
-      const uploadForm = document.getElementById("photoupload");
       const addPlayerForm = document.getElementById("addPlayer");
-      function handlePhotoForm(event) {
-        event.preventDefault();
-        let apikey = document.getElementById("api-key").value;
-        let updatetext = document.getElementById("joemama");
-        var formdata = new FormData();
-        formdata.append("avatar", thephoto.files[0], thephoto.files[0].name);
-
-        var requestOptions = {
-          method: "POST",
-          body: formdata,
-          redirect: "follow",
-        };
-
-        fetch(
-          //"http://ec2-3-145-21-220.us-east-2.compute.amazonaws.com/api/upload-avatar/?api-key=whydoesntthiswork",
-          `https://celestialsapi.parkergagliano.com/api/upload-avatar/?apy-key=${apikey}`,
-          requestOptions
-        )
-          .then((response) => response.text())
-          .then((result) => updatetext.innerText(result))
-          .catch((error) => updatetext.innerText(error));
-      }
       function handleForm(event) {
         event.preventDefault();
         res = document.getElementById("joemama");
@@ -455,37 +426,39 @@
         let tiktok = document.getElementById("tiktok").value;
         let apikey = document.getElementById("api-key").value;
         let formmethod = document.getElementById("method").value;
+
         var myHeaders = new Headers();
-        console.log(typeof document.getElementById("rank").value);
 
-        myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+        var formdata = new FormData();
+        formdata.append("name", name);
+        formdata.append("tagline", tagline);
+        formdata.append("rank", rank);
+        formdata.append("twitter", twitter);
+        formdata.append("youtube", youtube);
+        formdata.append("twitch", twitch);
+        formdata.append("tiktok", tiktok);
+        if (thephoto.files[0]) {
+          formdata.append("avatar", thephoto.files[0], thephoto.files[0].name);
+        }
 
-        var urlencoded = new URLSearchParams();
-        urlencoded.append("name", name);
-        urlencoded.append("tagline", tagline);
-        urlencoded.append("rank", rank);
-        urlencoded.append("twitter", twitter);
-        urlencoded.append("youtube", youtube);
-        urlencoded.append("twitch", twitch);
-        urlencoded.append("tiktok", tiktok);
         var requestOptions = {
           method: formmethod,
           headers: myHeaders,
-          body: urlencoded,
+          body: formdata,
           redirect: "follow",
         };
 
         fetch(
           //`http://ec2-3-145-21-220.us-east-2.compute.amazonaws.com/api/wowplayers/?api-key=${apikey}`,
-          `https://celestialsapi.parkergagliano.com/api/wowplayers/?api-key=${apikey}`,
+          //`https://celestialsapi.parkergagliano.com/api/wowplayers/?api-key=${apikey}`,
+          `http://127.0.0.1:1000/wowplayers`,
           requestOptions
         )
           .then((response) => response.text())
-          .then((result) => console.log(result))
-          .catch((error) => console.log("error", error));
+          .then((result) => alert(result))
+          .catch((error) => alert(error));
       }
       addPlayerForm.addEventListener("submit", handleForm);
-      uploadForm.addEventListener("submit", handlePhotoForm);
     </script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
