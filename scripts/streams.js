@@ -1,9 +1,24 @@
 let clinetId = "1jld8u8wgq6gptu0aqtn4pwi3icyo4"; let clinetSecret = "xt2ee0rwaj9vuyvbpf6qjiwz8apo2o";
-let channelList = ['landonkyle', 'theedrewski','whiiskeyz', 'bigrodentt', 'tragiicisbad', 'crawel077','vorgol13', 'collindood']
+//let old = ['landonkyle', 'theedrewski','whiiskeyz', 'bigrodentt', 'tragiicisbad', 'crawel077','vorgol13', 'collindood']
+channelList = []
+const lists = fetch("https://celestialsapi.parkergagliano.com/streamers")
+//const joe = fetch("http://127.0.0.1:3000/wowplayers")
+lists.then((response) => {
+    return response.json()
+}).then((data) => {
+    for (let i = 0; i < data.length; i++) {
+        channelList.push(data[i].name)
+
+    }
+
+    getStreams(channelList)
+  }
+
+)
 
 
 function generateAnimation(count, streams) {
-    console.log(count)
+
     if ( ([1,4,7, 10, 13, 16, 19, 22]).includes(count)) {
         return 'animate__fadeInLeft'
     }
@@ -217,4 +232,4 @@ function createElement(classes, content) {
 
 //console.log(joe)
 
-getStreams(channelList);
+//getStreams(channelList);
