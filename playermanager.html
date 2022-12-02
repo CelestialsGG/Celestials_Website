@@ -226,10 +226,10 @@
       <div class="container-fluid mt-5">
         <div class="row">
           <div class="col">
-            <h4 class="text-center text-white">Player Manager</h4>
+            <h1 class="text-center text-white">Player Manager</h1>
           </div>
         </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mb-4">
           <div class="col-auto">
             <h5 class="text-white pt-1 mt-2">API-KEY</h5>
           </div>
@@ -244,7 +244,7 @@
             />
           </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-around">
           <div class="col-12 col-md-4">
             <form id="addPlayer" class="form-signin">
               <h2 class="form-signin-heading text-light text-center">
@@ -307,49 +307,80 @@
                 name="tiktok"
                 placeholder="Tiktok"
               />
-              <input id="thephoto" type="file" name="image" />
+              <input
+                class="text-light"
+                id="thephoto"
+                type="file"
+                name="image"
+              />
               <button
-                class="btn btn-lg btn-primary btn-block mt-2"
+                class="btn btn-lg btn-primary btn-block mt-2 justify-self-right"
                 type="submit"
               >
                 Submit
               </button>
             </form>
           </div>
-          <div class="col-12 col-md-4">
-            <p class="text-white">
+          <div class="col-12 col-md-6">
+            <h5 class="text-white ml-5 pl-5">
               General usage: <br />
-              You must put the API key in the top box. <br />
-              You must select the method you want to use. <br />
-              You must ensure the rank dropdown is on the correct value <br />
+              Paste the key into the top <br />
+              Select the correct method at the top <br />
+              Ensure you select the correct rank <br />
               <br />
               To add a player: <br />
-              Name and Tagline required <br />Tagline should be the same as the
-              ranking, could make it custom if u want<br /><br />
+              Name, tagline, and image required <br />Tagline should be the same
+              as the ranking, could make it custom if u want<br /><br />
               To delete a player: <br />
               Only name required <br /><br />
               To edit a player: <br />
               Name is all it needs to identify the player, then you can edit
               only what u want to edit, be sure to keep rank dropdown the same
-            </p>
+
+              <br /><br />
+              If you want to edit an image, you should delete and re-add the
+              person
+            </h5>
           </div>
-          <div class="col-12 col-md-4">
-            <div class="row"></div>
-            <div class="row">
-              <div class="col">
-                <p class="text-white bolds">
-                  The photo must be uploaded seperately for now <br />
-                  You must have a 4x5 image already cropped 800x1000 or
-                  400x500<br />
-                  You must also have the photo name match exactly what the
-                  persons name is and be a PNG<br />
-                  When you create a player, the name should have 1 capital
-                  letter to start as well as the photo so they match perfectly
-                </p>
-              </div>
+        </div>
+
+        <div class="row mb-4">
+          <div class="col">
+            <h1 class="text-light text-center">Streamer Manager</h1>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-around">
+        <div class="col-12 col-md-4">
+          <div class="row">
+            <div class="col">
+              <form id="addStreamer" class="form-signin">
+                <h2 class="form-signin-heading text-light text-center">
+                  Manage Streamer
+                </h2>
+                <select id="streammethod" name="method" class="form-select">
+                  <option value="POST">Add</option>
+                  <option value="DELETE">Delete</option>
+                </select>
+                <input
+                  id="streamername"
+                  class="form-control mt-2"
+                  type="text"
+                  required
+                  name="streamername"
+                  placeholder="Streamer name"
+                />
+                <button
+                  class="btn btn-lg btn-primary btn-block mt-2 justify-self-right"
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </form>
             </div>
           </div>
         </div>
+        <div class="col-12 col-md-6"><h5 class="text-light">Joe</h5></div>
       </div>
 
       <div class="container-fluid mt-5 pt-2" style="background-color: #181716">
@@ -414,9 +445,9 @@
     </div>
     <script>
       const addPlayerForm = document.getElementById("addPlayer");
+      const addStreamerForm = document.getElementById("addStreamer");
       function handleForm(event) {
         event.preventDefault();
-        res = document.getElementById("joemama");
         let name = document.getElementById("playerName").value;
         let tagline = document.getElementById("tagline").value;
         let rank = parseInt(document.getElementById("rank").value);
@@ -428,7 +459,6 @@
         let formmethod = document.getElementById("method").value;
 
         var myHeaders = new Headers();
-
         var formdata = new FormData();
         formdata.append("name", name);
         formdata.append("tagline", tagline);
@@ -450,8 +480,36 @@
 
         fetch(
           //`http://ec2-3-145-21-220.us-east-2.compute.amazonaws.com/api/wowplayers/?api-key=${apikey}`,
-          //`https://celestialsapi.parkergagliano.com/api/wowplayers/?api-key=${apikey}`,
-          `http://127.0.0.1:1000/wowplayers`,
+          `https://celestialsapi.parkergagliano.com/api/wowplayers/?api-key=${apikey}`,
+          //`http://127.0.0.1:3000/api/wowplayers/?api-key=${apikey}`,
+          requestOptions
+        )
+          .then((response) => response.text())
+          .then((result) => alert(result))
+          .catch((error) => alert(error));
+      }
+
+      function handleStreamerForm(event) {
+        event.preventDefault();
+        let name = document.getElementById("streamername").value;
+        let formmethod = document.getElementById("streammethod").value;
+        let apikey = document.getElementById("api-key").value;
+        var myHeaders = new Headers();
+
+        var formdata = new FormData();
+        formdata.append("name", name);
+
+        var requestOptions = {
+          method: formmethod,
+          headers: myHeaders,
+          body: formdata,
+          redirect: "follow",
+        };
+
+        fetch(
+          //`http://ec2-3-145-21-220.us-east-2.compute.amazonaws.com/api/wowplayers/?api-key=${apikey}`,
+          `https://celestialsapi.parkergagliano.com/api/wowplayers/?api-key=${apikey}`,
+          //`http://127.0.0.1:1000/streamers`,
           requestOptions
         )
           .then((response) => response.text())
@@ -459,6 +517,7 @@
           .catch((error) => alert(error));
       }
       addPlayerForm.addEventListener("submit", handleForm);
+      addStreamerForm.addEventListener("submit", handleStreamerForm);
     </script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

@@ -5,9 +5,9 @@ let final = []
 let ranks = ['Guild Leader', 'Lead Officer', 'Officer', "Treasurer", "Raider", "Member"]
 //const joe = fetch("http://ec2-3-145-21-220.us-east-2.compute.amazonaws.com/wowplayers")
 //const joe = fetch("https://ec2-18-221-171-204.us-east-2.compute.amazonaws.com/wowplayers")
-//const joe = fetch("https://celestialsapi.parkergagliano.com/wowplayers")
-const joe = fetch("http://127.0.0.1:1000/wowplayers")
-joe.then((response) => {
+const fdata = fetch("https://celestialsapi.parkergagliano.com/wowplayers")
+//const joe = fetch("http://127.0.0.1:3000/wowplayers")
+fdata.then((response) => {
     return response.json()
 }).then((data) => {
     console.log(data)
@@ -33,7 +33,7 @@ function renderPlayers(data) {
           <img
             style= "max-height: 350px"
             class="test-bg-color img-fluid p-0 rounded-xlphoto photo-b-border"
-            src="http://127.0.0.1:1000/${data[i].name + "." + data[i].imageextention}"
+            src="https://celestialsapi.parkergagliano.com/${data[i].name + "." + data[i].imageextention}"
             alt=""
           />
         </div>
